@@ -1,4 +1,4 @@
-declare
+DECLARE
     res resultset;
     col_name varchar;
     select_statement varchar;
@@ -10,4 +10,4 @@ begin
 end;
 
 
- 
+  
