@@ -1,7 +1,3 @@
-
-{{ config(materialized='table', alias='first_model', tags=["nightly", "example"] ) }}
-
-
 declare
     res resultset;
     col_name varchar;
