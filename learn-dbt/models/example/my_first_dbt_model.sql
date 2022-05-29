@@ -1,11 +1,7 @@
 
 {{ config(materialized='table', alias='first_model', tags=["nightly", "example"] ) }}
 
-create or replace procedure test_sp()
-returns table()
-language sql
-as 
-$$
+execute immediate $$
     declare
         res resultset;
         col_name varchar;
@@ -18,4 +14,4 @@ $$
     end;
 $$;
 
-call test_sp()
+ 
