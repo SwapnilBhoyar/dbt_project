@@ -1,10 +1,21 @@
 
 {{ config(materialized='table', alias='first_model', tags=["nightly", "example"] ) }}
 
-with source_data as (
+create or replace procedure test_sp()
+returns table()
+language sql
+as 
+$$
+    declare
+        res resultset;
+        col_name varchar;
+        select_statement varchar;
+    begin
+        col_name := 'C_NAME';
+        select_statement:= 'SELECT' || col_name || 'FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER';
+        res := (execute immediate : select_statement);
+        return table(res);
+    end;
+$$;
 
-    select * from "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
-)
-
-select *
-from source_data
+call test_sp()
