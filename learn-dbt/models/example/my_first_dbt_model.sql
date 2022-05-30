@@ -5,4 +5,4 @@ begin
   select * from FROM "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
 end;
 
-call output_message();
+{{my_message}}

@@ -1,4 +1,4 @@
-{% macro output_message() %}
+{% macro my_message() %}
     {% set query -%}
         CALL output_message();
         commit;
