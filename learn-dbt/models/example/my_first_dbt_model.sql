@@ -1,5 +1,5 @@
-create or replace procedure output_message(message varchar)
-returns varchar not null
+CREATE or replace procedure output_message(message varchar)
+RETURNS varchar not null
 language sql
 as
 begin
