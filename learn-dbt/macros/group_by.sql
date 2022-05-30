@@ -1,7 +1,3 @@
-{% macro group_by(n) %}
-  GROUP BY
-   {% for i in range(1, n + 1) %}
-     {{ i }}
-     {% if not loop.last %} , {% endif %}
-   {% endfor %}
+{% macro get_data %}
+  select * C_NAME from "FROM SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
 {% endmacro %}
