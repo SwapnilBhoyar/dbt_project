@@ -6,4 +6,4 @@ begin
   return message;
 end;
 
-{{get_data('hello')}}
+{{get_data()}}
