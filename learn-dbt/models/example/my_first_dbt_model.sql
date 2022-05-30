@@ -1,9 +1,10 @@
-CREATE or replace procedure output_message(message varchar)
-RETURNS varchar not null
+{{ config(materialized='table', alias='first_model', tags=["nightly", "example"] ) }}
+
+CREATE or replace procedure output_message()
 language sql
 as
 begin
-  return message;
+  select * from FROM "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
 end;
 
-call output_message('Hello World');
+call output_message();

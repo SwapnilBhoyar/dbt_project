@@ -1,6 +1,6 @@
 {% macro output_message() %}
     {% set query -%}
-        CALL output_message('hello');
+        CALL output_message();
         commit;
     {%- endset %}
 
