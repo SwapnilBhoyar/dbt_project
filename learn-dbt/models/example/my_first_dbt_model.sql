@@ -1,3 +1,9 @@
-{{ config(materialized='table', alias='first_model', tags=["nightly", "example"] ) }}
+create or replace procedure output_message(message varchar)
+returns varchar not null
+language sql
+as
+begin
+  return message;
+end;
 
-{{get_data()}}
+{{get_data('hello')}}

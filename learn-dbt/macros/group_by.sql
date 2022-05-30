@@ -1,3 +1,9 @@
-{% macro get_data() %}
-  select C_NAME from "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
+{% macro output_message() %}
+    {% set query -%}
+        CALL output_message(
+          message varchar);
+        commit;
+    {%- endset %}
+
+    {% do run_query(query) %}
 {% endmacro %}
