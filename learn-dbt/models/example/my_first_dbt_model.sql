@@ -6,4 +6,4 @@ begin
   return message;
 end;
 
-{{output_message()}}
+call output_message('Hello World');
