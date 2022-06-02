@@ -1,8 +1,11 @@
-{% macro my_message() %}
-    {% set query -%}
-        CALL output_message();
-        commit;
-    {%- endset %}
+{% macro output_message(msg) %}
+create or replace procedure output_message(message varchar)
+returns varchar not null
+language sql
+as
+begin
+  return message;
+end;
 
-    {% do run_query(query) %}
+call output_message(msg);
 {% endmacro %}
